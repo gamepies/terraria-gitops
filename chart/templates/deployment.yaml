@@ -37,8 +37,6 @@ spec:
       containers:
         - image: 'ryshe/terraria:{{ .Values.image.tag }}'
           name: {{ .Release.Name }}
-          tty: {{ .Values.pod.isTtyEnabled }}
-          stdin: {{ .Values.pod.isStdinEnabled }}
           imagePullPolicy: Always
           args:
           - "-autocreate"
