@@ -44,6 +44,8 @@ spec:
           tty: {{ .Values.pod.isTtyEnabled }}
           stdin: {{ .Values.pod.isStdinEnabled }}
           args:
+          - "-worldname"
+          - "{{ .Values.terraria.worldName }}"
           - "-world"
           - "/root/.local/share/Terraria/Worlds/{{ .Values.terraria.worldName }}.wld"
           - "-autocreate"
