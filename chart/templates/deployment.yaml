@@ -41,11 +41,11 @@ spec:
           stdin: {{ .Values.pod.isStdinEnabled }}
           imagePullPolicy: Always
           args:
-          - "-killinactivesocket"
           - "-autocreate"
           - "{{ .Values.terraria.worldSize }}" 
           - "-world"
           - "/root/.local/share/Terraria/Worlds/{{ .Values.terraria.worldName }}.wld"
+
           ports:
             - name: server
               containerPort: 7777
