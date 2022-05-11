@@ -46,8 +46,6 @@ spec:
           env:
           - name: WORLD_FILENAME
             value: "/root/.local/share/Terraria/Worlds/{{ .Values.terraria.worldName }}.wld"
-          - name: CONFIG_FILENAME
-            value: config.json
           ports:
             - name: server
               containerPort: 7777
