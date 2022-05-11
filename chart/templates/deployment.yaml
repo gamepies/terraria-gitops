@@ -65,9 +65,6 @@ spec:
           volumeMounts:
             - name: worlds
               mountPath: /root/.local/share/Terraria/Worlds
-      securityContext:
-        fsGroup: 2000
-        runAsUser: 1000
       volumes:
         - name: settings
           configMap:
