@@ -12,6 +12,5 @@ spec:
       protocol: TCP
       targetPort: http
   selector:
-    app.kubernetes.io/name: {{ .Release.Name  }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
+    app: {{ .Release.Name  }}
 {{- end }}
