@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ .Release.Name }}-worlds-claim
   namespace: {{ .Release.Namespace }}
 spec:
   accessModes:

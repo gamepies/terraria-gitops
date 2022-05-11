@@ -58,4 +58,4 @@ spec:
             name: {{ .Release.Name }}-configmap
         - name: worlds
           persistentVolumeClaim:
-            claimName: terraria-worlds
+            claimName: {{ .Release.Name }}-worlds-claim
