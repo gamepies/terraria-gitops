@@ -39,11 +39,10 @@ spec:
           name: {{ .Release.Name }}
           imagePullPolicy: Always
           args:
+          - "-world"
+          - "/root/.local/share/Terraria/Worlds/{{ .Values.terraria.worldName }}.wld"
           - "-autocreate"
           - "{{ .Values.terraria.worldSize }}" 
-          env:
-          - name: WORLD_FILENAME
-            value: "/root/.local/share/Terraria/Worlds/{{ .Values.terraria.worldName }}.wld"
           ports:
             - name: server
               containerPort: 7777
