@@ -1,7 +1,7 @@
 
 pod:
-  isTtyEnabled: false
-  isStdinEnabled: false
+  isTtyEnabled: true
+  isStdinEnabled: true
   resources:
     cpu:
       limit: 4
