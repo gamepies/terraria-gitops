@@ -20,6 +20,20 @@ spec:
       labels:
         app: {{ .Release.Name }}
     spec:
+      initContainers:
+      - name: mount-world
+        image: 'busybox:1.28'
+        command: ['sh']
+        args:
+        - '-c'
+        - |
+          cp /configmap/config.json /world/config.json
+          chmod 777 /world/config.json
+        volumeMounts:
+        - name: worlds  
+          mountPath: /world
+        - name: configmap
+          mountPath: /configmap
       containers:
         - image: 'ryshe/terraria:{{ .Values.image.tag }}'
           name: {{ .Release.Name }}
