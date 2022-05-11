@@ -38,6 +38,8 @@ spec:
         - image: 'ryshe/terraria:{{ .Values.image.tag }}'
           name: {{ .Release.Name }}
           imagePullPolicy: Always
+          tty: {{ .Values.pod.isTtyEnabled }}
+          stdin: {{ .Values.pod.isStdinEnabled }}
           args:
           - "-world"
           - "/root/.local/share/Terraria/Worlds/{{ .Values.terraria.worldName }}.wld"

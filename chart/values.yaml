@@ -1,5 +1,7 @@
 
 pod:
+  isTtyEnabled: false
+  isStdinEnabled: false
   resources:
     cpu:
       limit: 4
