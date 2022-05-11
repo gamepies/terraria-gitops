@@ -32,7 +32,7 @@ spec:
         volumeMounts:
         - name: worlds  
           mountPath: /world
-        - name: configmap
+        - name: settings
           mountPath: /configmap
       containers:
         - image: 'ryshe/terraria:{{ .Values.image.tag }}'
