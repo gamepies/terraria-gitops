@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name}}
+  name: {{ .Release.Name }}-rest
 spec:
   type: NodePort
   ports:
