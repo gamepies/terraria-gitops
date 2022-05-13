@@ -30,13 +30,18 @@ spec:
         args:
         - '-c'
         - |
-          cp /configmap/config.json /world/config.json
+          cp /terraria-server-settings/config.json /world/config.json
+          cp /tshock-settings/sscconfig.json /world/sscconfig.json
           chmod 777 /world/config.json
+          chmod 777 /world/sscconfig.json
+          echo "{{ .Values.terraria.motd }}" > /world/motd.txt
         volumeMounts:
         - name: worlds  
           mountPath: /world
-        - name: settings
-          mountPath: /configmap
+        - name: terraria-server-settings
+          mountPath: /terraria-server-settings
+        - name: tshock-settings
+          mountPath: /tshock-settings
       containers:
         - image: 'ryshe/terraria:{{ .Values.image.tag }}'
           name: {{ .Release.Name }}
@@ -68,9 +73,12 @@ spec:
             - name: worlds
               mountPath: /root/.local/share/Terraria/Worlds
       volumes:
-        - name: settings
+        - name: terraria-server-settings
           configMap:
-            name: {{ .Release.Name }}-configmap
+            name: {{ .Release.Name }}-terraria-server-configmap
+        - name: tshock-settings
+          configMap:
+            name: {{ .Release.Name }}-tshock-configmap
         - name: worlds
           persistentVolumeClaim:
             claimName: {{ .Release.Name }}-worlds-claim
