@@ -116,7 +116,7 @@ terraria:
     RequireLogin: false
     DisableInvisPvP: false
     MaxRangeForDisabled: 10
-    ServerPassword: ''
+    ServerPassword: 'muffinsucks'
     RegionProtectChests: false
     RegionProtectGemLocks: true
     DisableLoginBeforeJoin: false
