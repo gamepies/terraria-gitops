@@ -17,7 +17,7 @@ rest:
   enabled: true
 
 image:
-  tag: vanilla-1.4.3.6-4
+  tag: tshock-1.4.3.6-4.5.17-2
 
 terraria:
   #small (1), medium (2), large (3)
@@ -46,7 +46,7 @@ terraria:
     BackupKeepFor: 60
     RememberLeavePos: false
     HardcoreOnly: false
-    MediumcoreOnly: false
+    MediumcoreOnly: true
     KickOnMediumcoreDeath: false
     BanOnMediumcoreDeath: false
     AutoSave: true
