@@ -31,8 +31,10 @@ spec:
         args:
         - '-c'
         - |
-          \cp /terraria-server-settings/config.json /world/config.json
-          \cp /tshock-settings/sscconfig.json /world/sscconfig.json
+          rm /world/config.json
+          rm /world/sscconfig.json
+          cp /terraria-server-settings/config.json /world/config.json
+          cp /tshock-settings/sscconfig.json /world/sscconfig.json
           chmod 777 /world/config.json
           chmod 777 /world/sscconfig.json
           echo "{{ .Values.terraria.motd }}" > /world/motd.txt
