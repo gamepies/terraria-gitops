@@ -18,7 +18,8 @@ spec:
   template:
     metadata:
       annotations:
-        checksum: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        checksum/terraria: {{ include (print $.Template.BasePath "/terraria-server-configmap.yaml") . | sha256sum }}
+        checksum/tshock: {{ include (print $.Template.BasePath "/tshock-configmap.yaml") . | sha256sum }}
       labels:
         app: {{ .Release.Name }}
     spec:
