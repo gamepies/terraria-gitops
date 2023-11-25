@@ -31,8 +31,6 @@ spec:
         args:
         - '-c'
         - |
-          rm /world/config.json
-          rm /world/sscconfig.json
           cp /terraria-server-settings/config.json /world/config.json
           cp /tshock-settings/sscconfig.json /world/sscconfig.json
           chmod 777 /world/config.json
@@ -48,7 +46,7 @@ spec:
       containers:
         - image: 'ryshe/terraria:{{ .Values.image.tag }}'
           name: {{ .Release.Name }}
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           tty: {{ .Values.pod.isTtyEnabled }}
           stdin: {{ .Values.pod.isStdinEnabled }}
           args:

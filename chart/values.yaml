@@ -17,7 +17,7 @@ rest:
   enabled: true
 
 image:
-  tag: tshock-1.4.3.6-4.5.17-2
+  tag: tshock-1.4.4.9-5.2.0
 
 tshock:
   ssc:
