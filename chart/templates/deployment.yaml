@@ -49,11 +49,14 @@ spec:
           imagePullPolicy: IfNotPresent
           tty: {{ .Values.pod.isTtyEnabled }}
           stdin: {{ .Values.pod.isStdinEnabled }}
-          args:
-          - "-worldname"
-          - "{{ .Values.terraria.worldName }}"
-          - "-world"
-          - "/root/.local/share/Terraria/Worlds/{{ .Values.terraria.worldName }}12.wld"
+          env:
+          - name: WORLD_FILENAME
+            value: ""Malse_Makkertjes12.wld
+          # args:
+          # - "-worldname"
+          # - "{{ .Values.terraria.worldName }}"
+          # - "-world"
+          # - "/root/.local/share/Terraria/Worlds/{{ .Values.terraria.worldName }}12.wld"
           # - "-autocreate"
           # - "{{ .Values.terraria.worldSize }}" 
           ports:
