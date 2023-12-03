@@ -53,9 +53,9 @@ spec:
           - "-worldname"
           - "{{ .Values.terraria.worldName }}"
           - "-world"
-          - "/root/.local/share/Terraria/Worlds/{{ .Values.terraria.worldName }}.wld"
-          - "-autocreate"
-          - "{{ .Values.terraria.worldSize }}" 
+          - "/root/.local/share/Terraria/Worlds/{{ .Values.terraria.worldName }}12.wld"
+          # - "-autocreate"
+          # - "{{ .Values.terraria.worldSize }}" 
           ports:
             - name: server
               containerPort: 7777
