@@ -51,7 +51,7 @@ spec:
           stdin: {{ .Values.pod.isStdinEnabled }}
           env:
           - name: WORLD_FILENAME
-            value: ""Malse_Makkertjes12.wld
+            value: Malse_Makkertjes12.wld
           # args:
           # - "-worldname"
           # - "{{ .Values.terraria.worldName }}"
