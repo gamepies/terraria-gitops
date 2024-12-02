@@ -5,7 +5,7 @@ pod:
   resources:
     cpu:
       limit: 4
-      request: 1
+      request: 128m
     memory:
       limit: 8192Mi
       request: 512Mi
